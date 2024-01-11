@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fc_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:name="com.example.testandroid1101_2.fragment.FirstFragment"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        
+        <Button
+            android:id="@+id/btn_fr1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/_1"
+            android:textSize="25sp"
+            android:layout_margin="8dp"/>
+
+        <Button
+            android:id="@+id/btn_fr2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/_2"
+            android:textSize="25sp"
+            android:layout_margin="8dp"/>
+
+        <Button
+            android:id="@+id/btn_fr3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/_3"
+            android:textSize="25sp"
+            android:layout_margin="8dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
