@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnFr1.setOnClickListener(new View.OnClickListener() {
+        /*binding.btnFr1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 binding.mvDraw.setPaintColor(getResources().getColor(R.color.red));
@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 binding.mvDraw.setPaintColor(getResources().getColor(R.color.blue));
             }
-        });
+        });*/
 
-        /* fragmentManager = getSupportFragmentManager();
+        /*fragmentManager = getSupportFragmentManager();
 
         firstFragment = (FirstFragment) fragmentManager.getFragments().get(0);
         secondFragment = new SecondFragment();
@@ -85,11 +85,11 @@ public class MainActivity extends AppCompatActivity {
                         addToBackStack(null).
                         commit();
             }
-        }); */
+        });*/
     }
 
-    @Override
+    /*@Override
     public void onBackPressed() {
         binding.mvDraw.cancelLastPath();
-    }
+    }*/
 }
