@@ -2,6 +2,7 @@ package com.example.testandroid1101_2.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -39,6 +40,16 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceDestroyed(@NonNull SurfaceHolder surfaceHolder) {
+        destroy();
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        destroy();
+        return true;
+    }
+
+    private void destroy() {
         drawThread.requestStop();
         boolean retry = true;
         while (retry) {
