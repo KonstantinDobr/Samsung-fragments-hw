@@ -1,32 +1,54 @@
 package com.example.testandroid1101_2;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.testandroid1101_2.databinding.ActivityMainBinding;
-import com.example.testandroid1101_2.fragment.FirstFragment;
-import com.example.testandroid1101_2.fragment.SecondFragment;
-import com.example.testandroid1101_2.fragment.ThirdFragment;
+import com.example.testandroid1101_2.view.MyView;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private FragmentManager fragmentManager;
+
+    private MyView myView;
+
+    /* private FragmentManager fragmentManager;
     private SecondFragment secondFragment;
     private FirstFragment firstFragment;
-    private ThirdFragment thirdFragment;
+    private ThirdFragment thirdFragment; */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        fragmentManager = getSupportFragmentManager();
+        binding.btnFr1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.mvDraw.setPaintColor(getResources().getColor(R.color.red));
+            }
+        });
+
+        binding.btnFr2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.mvDraw.setPaintColor(getResources().getColor(R.color.green));
+            }
+        });
+
+        binding.btnFr3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.mvDraw.setPaintColor(getResources().getColor(R.color.blue));
+            }
+        });
+
+        /* fragmentManager = getSupportFragmentManager();
 
         firstFragment = (FirstFragment) fragmentManager.getFragments().get(0);
         secondFragment = new SecondFragment();
@@ -63,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
                         addToBackStack(null).
                         commit();
             }
-        });
+        }); */
+    }
+
+    @Override
+    public void onBackPressed() {
+        binding.mvDraw.cancelLastPath();
     }
 }
